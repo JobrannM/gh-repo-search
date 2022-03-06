@@ -1,4 +1,4 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 class GithubApiSearchReposService
   class GithubApiError < StandardError; end
@@ -23,7 +23,7 @@ class GithubApiSearchReposService
     if response.success?
       JSON.parse(response.body)
     else
-      raise GithubApiError.new("HTTP request failed with code #{response.code}")
+      raise GithubApiError, "HTTP request failed with code #{response.code}"
     end
   end
 
@@ -31,17 +31,17 @@ class GithubApiSearchReposService
 
   def url
     BASE_URL +
-    ENDPOINT + '?&' +
-    "q=#{search_term}" + '&' +
-    "sort=#{SORT_BY}" + '&'+
-    "per_page=#{RESULTS_PER_PAGE}"
+      ENDPOINT + '?&' \
+      "q=#{search_term}" + '&' \
+      "sort=#{SORT_BY}" + '&' \
+      "per_page=#{RESULTS_PER_PAGE}"
   end
 
   def headers
     {
       headers: {
-        "Accept" => "application/vnd.github.v3+json"
-      }
+        'Accept' => 'application/vnd.github.v3+json',
+      },
     }
   end
 end

@@ -1,4 +1,4 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 class Repository
   attr_reader :title, :owner, :url, :owner_url, :description, :stars, :language

@@ -1,11 +1,12 @@
-class RepositoriesController < ApplicationController
+# frozen_string_literal: true
 
+class RepositoriesController < ApplicationController
   def search
-    unless query.blank?
+    if query.blank?
+      redirect_to(root_path)
+    else
       response_object = GithubApiSearchReposService.new(query).perform
       @repositories = BuildRepositoryObjectService.new(response_object).perform
-    else
-      redirect_to root_path
     end
   end
 
