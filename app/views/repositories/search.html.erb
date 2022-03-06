@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Language</th>
+      <th>Stars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @repositories.each do |repo|%>
+      <tr>
+        <td>
+          <%= link_to "#{repo.title}", repo.url%>
+        </td>
+        <td>
+          <%=truncate(repo.description, length: 150)%>
+        </td>
+        <td>
+          <%= link_to "#{repo.owner}", repo.owner_url%>
+        </td>
+        <td>
+          <%=repo.language%>
+        </td>
+        <td>
+          <%=repo.stars%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
