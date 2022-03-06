@@ -20,7 +20,7 @@ class BuildRepositoryObjectService
       title: properties.fetch("name"),
       owner: properties.dig("owner", "login"),
       url: properties.fetch("html_url"),
-      owner_url: properties.dig("owner", "url"),
+      owner_url: properties.dig("owner", "html_url"),
       description: properties.fetch("description"),
       stars: properties.fetch("stargazers_count"),
       language: properties.fetch("language")

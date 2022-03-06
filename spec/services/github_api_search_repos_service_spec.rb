@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe GithubApiSearchReposService do
-  let(:search_term) { 'adjust analytics' }
+  let(:search_term) { 'hello-world' }
 
   subject { described_class.new(search_term) }
 

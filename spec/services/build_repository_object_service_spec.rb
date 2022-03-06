@@ -15,7 +15,7 @@ RSpec.describe BuildRepositoryObjectService do
           "login"=>"JobrannM",
           "id"=>32314050,
           "node_id"=>"MDQ6VXNlcjMyMzE0MDUw",
-          "url"=>"https://api.github.com/users/JobrannM",
+          "html_url"=>"https://github.com/users/JobrannM",
         }, 
           "html_url"=>"https://github.com/JobrannM/hello-world",
           "description"=>"A simple hello world project",
@@ -43,7 +43,7 @@ RSpec.describe BuildRepositoryObjectService do
       expect(repository.title).to eq "hello-world"
       expect(repository.owner).to eq "JobrannM"
       expect(repository.url).to eq "https://github.com/JobrannM/hello-world"
-      expect(repository.owner_url).to eq "https://api.github.com/users/JobrannM"
+      expect(repository.owner_url).to eq "https://github.com/users/JobrannM"
       expect(repository.description).to eq "A simple hello world project"
       expect(repository.stars). to eq 1
       expect(repository.language).to eq "Ruby"
